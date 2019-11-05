@@ -62,20 +62,22 @@ const ChatView = () => {
   return (
     <div>
       <h1>Messages</h1>
-      {message.map((item, i) => {
-        return <Message
-          key={item.key}
-          name={item.name}
-          text={item.text}
-        />
-      }}
+      {messages.map((item, i) => {
+        return (
+                <Message
+                    key={item.key}
+                    name={item.name}
+                    text={item.text}
+                    reactions={item.reactions}
+                    id={item.key}
+                />
+            )
+        })}
       <input
         value={inputValue}
         onChange={event => setInputValue(event.target.value)}
       />
-      <button
-        onClick={() => addMessage("Max", inputValue)
-      >Send to Firebase</button>
+      <button onClick={() => addMessage("Max", inputValue)}>Send to Firebase</button>
     </div>
   )
 }
