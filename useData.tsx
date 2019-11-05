@@ -18,7 +18,7 @@ export function useData(
             .then(json => setData(json))
     }, [source])
 
-    return { data }
+    return { data, setData }
 }
 
 
