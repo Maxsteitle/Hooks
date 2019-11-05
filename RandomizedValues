@@ -1,0 +1,22 @@
+function random(list) {
+	return list[Math.floor(Math.random() * list.length)];
+}
+
+⛵️ Example
+const items = ["apple", "orange", "pear"]
+console.log(random(items)) // apple
+
+
+
+
+function randomNumber(min, max, round?) {
+	if (round) {
+		return Math.floor(Math.random() * (max - min) + min);
+	} else {
+		return Math.random() * (max - min) + min;
+	}
+}
+
+🔮 Example
+console.log(randomNumber(0,10) // 5.6
+console.log(randomNumber(0,10,true) // 6
