@@ -1,0 +1,38 @@
+export function useUnsplash(
+    size: "small" | "medium" | "large"  = "medium",
+    keyword?: string
+) {
+    const [unsplashImage, setUnsplashImage] = useState()
+
+    const sizes = {
+        small: 800,
+        medium: 1600,
+        large: 2400,
+    }
+
+    useEffect(() => {
+        setUnsplashImage(
+            `https://source.unsplash.com/${keyword ? "/featured" : "/random"}/${
+                sizes[size]
+            }x${size[size]}?${keyword}`
+        )
+    }, [size])
+
+    return [unsplashImage]
+}
+
+
+
+🍉 Example...
+
+const Example = () => {
+    const [randomImage] = useUnsplash()
+    const [dogImage] = useUnsplash("large", "dog")
+
+    return (
+        <div>
+            <img src={randomImage} />
+            <img src={dogImage} />
+        </div>
+    )
+}
