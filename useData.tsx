@@ -27,7 +27,7 @@ export function useData(
 🧁 Example...
 
 const Example = () => {
-    const { albumData } = useData("top-10-albums")
+    const { albumData, setAlbumData } = useData("top-10-albums")
 
     return (
         <div>
