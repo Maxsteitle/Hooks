@@ -18,7 +18,7 @@ export function useData(
             .then(json => setData(json))
     }, [source])
 
-    return { data, setData }
+    return [ data, setData ]
 }
 
 
@@ -27,7 +27,7 @@ export function useData(
 🧁 Example...
 
 const Example = () => {
-    const { albumData, setAlbumData } = useData("top-10-albums")
+    const [ albumData, setAlbumData ] = useData("top-10-albums")
 
     return (
         <div>
