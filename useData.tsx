@@ -34,6 +34,9 @@ const Example = () => {
             {albumData.map(item => {
                 return <div>{item.name}</div>
             })}
+            <button onClick={() => setData([...data, { name: "Anotha one" }])}>
+                Add
+            </button>
         </div>
     )
 }
