@@ -9,7 +9,7 @@ export const useKeyboardShortcut = (targetKey: string, handler: () => void) => {
 
   function downHandler({ key }: any) {
     if (key === targetKey) {
-      savedHandler.current(handler);
+      savedHandler.current();
     }
   }
 
